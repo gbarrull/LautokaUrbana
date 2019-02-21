@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<title>Lautoka Urbana - Presupuesto para reformar tu baño</title>
+    <link rel="shortcut icon" href="img/Logo/favicon.ico" type="image/x-icon"/>
+
+    <!--Meta-->
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="google-site-verification" content="mIdWIcTzoTsTkzoht5AUfNlKvGnXtTIhnaI2tNgG-GA" />
+    <meta name="description" content="Reformas integrales de cocinas y baños en Barcelona. Proyectos de alta calidad. Interiorismo, Arquitectura y Diseño. Presupuestos de reformas." />
+
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	<!--Scripts-->
+	<script src="script/responsive.js"></script>
+    <script src="script/localStorage.js"></script>
+    <script src="script/presupuesto.js"></script>
+    <script src="script/precioMenu.js"></script>
+
+
+	<!--Styles-->
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body class="index">
+
+<header>
+    <div class="content">
+        <div class="logo"><a href="index.html"><img src="img/Logo/basico.png"  alt="Yummify"></a></div>
+        <nav class="menu-white">
+            <ul>
+                <li><a class="white" href="index.html">INICIO</a></li>
+                <li><a href="faq.html">CÓMO FUNCIONA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="hamburguesa">
+                <a id="pull" href="#" class="menu"><span></span></a>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="beginning-page content">
+        <div class="column-50">
+            <div class="content-box">
+                <div class="menu-selection">
+                    <div class="menu-selection-container">
+                        <button id="menu-selection-1" type="button" onclick="changeMenu(1)">OPCIÓN 1</button>
+                    </div>
+                    <div class="menu-selection-container">
+                        <button id="menu-selection-2" type="button" onclick="changeMenu(2)">OPCIÓN 2</button>
+                    </div>
+                    <div class="menu-selection-container">
+                        <button id="menu-selection-3" type="button" onclick="changeMenu(3)">OPCIÓN 3</button>
+                    </div>
+                </div>
+                <div id="option1">
+                    <form action="./PDF/index.php" method="POST" target="_blank">
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">m<sup>2</sup></p>
+                            </div>
+                            <div class="column-65">
+                                <input type="number" id="metros1" name="metros" class="text-box-70" placeholder="m&#178" required>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">WC</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="wc1" name="wc" onchange="precioMenu1();" class="dropdown-selection" >
+                                    <option value="wc_1">A suelo</option>
+                                    <option value="wc-1">Suspendido</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoWC1" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">BIDÉ</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="bide1" name ="bide" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="bi_1">A suelo</option>
+                                    <option value="bi-1">Suspendido</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoBI1" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">MUEBLE</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="mueble1" name="mueble" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="mue1">Estándar</option>
+                                    <option value="mum1">A medida</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoMU1" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">GRIFERÍA</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="griferia1" name="griferia" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="gre1">Empotrada</option>
+                                    <option value="grn1">No empotrada</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img name="fotoGR" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">Ducha/Bañera</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="ducha1" name="duba" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="dbn1">Nada</option>
+                                    <option value="dbd1">Ducha</option>
+                                    <option value="dbb1">Bañera</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img name="fotoDB" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <!-- BLOQUE CHECKBOX -->
+                        <div class="content-box-input">
+                            <div class="column-33">
+                                <input type="checkbox" id="moderno1" name="moderno" value="moderno1">
+                                <label for="moderno1">Moderno</label>
+                            </div>
+                            <div class="column-33">
+                                <input type="checkbox" id="clasico1" name="clasico" value="clasico1">
+                                <label for="clasico1">Clásico</label>
+                            </div>
+                            <div class="column-33">
+                                <input type="checkbox" id="modernoYclasico1" name="modernoYclasico" value="modernoYclasico1">
+                                <label for="modernoYclasico1">Ambas</label>
+                            </div>
+                        </div>
+                        <!-- BLOQUE DATOS A SQL -->
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">EMAIL</p>
+                            </div>
+                            <div class="column-75">
+                                <input type="email" name="email" class="text-box-90" placeholder="prueba@gmail.com">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">TELF</p>
+                            </div>
+                            <div class="column-75">
+                                <input type="tel" name="telf" class="text-box-90" placeholder="+34 666 222 333">
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type="submit" class="nextpage-button-menu button-menu" value="PRESUPUESTO" onclick="storageIndex(1)" name="submit1"/>
+                        </div>
+                    </form>
+                </div>
+                <div id="option2">
+                    <form action="./PDF/ajax.php" method="post" target="_blank">
+                        <input type="submit" value="PRESUPUESTO" name="submit1"/>
+                    </form>
+                    <form action="./phpMysql/buscar.php" method="POST" target="_blank">
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">m<sup>2</sup></p>
+                            </div>
+                            <div class="column-65">
+                                <input type="number" id="metros2" name="metros" class="text-box-70" placeholder="m&#178" required>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">WC</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="wc2" name="wc" onchange="precioMenu1();" class="dropdown-selection" >
+                                    <option value="wc_2">A suelo</option>
+                                    <option value="wc-2">Suspendido</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoWC2" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">BIDÉ</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="bide2" name ="bide" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="bi_2">A suelo</option>
+                                    <option value="bi-2">Suspendido</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoBI2" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">MUEBLE</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="mueble2" name="mueble" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="mue2">Estándar</option>
+                                    <option value="mum2">A medida</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoMU2" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">GRIFERÍA</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="griferia2" name="griferia" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="gre2">Empotrada</option>
+                                    <option value="grn2">No empotrada</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoGR2" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">Ducha/Bañera</p>
+                            </div>
+                            <div class="column-65">
+                                <select id="ducha2" name="duba" onchange="precioMenu1();" class="dropdown-selection">
+                                    <option value="dbn2">Nada</option>
+                                    <option value="dbd2">Ducha</option>
+                                    <option value="dbb2">Bañera</option>
+                                </select>
+                            </div>
+                            <div class="column-10 hoverDescripcion">
+                                <p class="negrita">ℹ️</p>
+                                <img id="fotoDB2" class="foto-muestra" src="img/fotoTipo/1.jpg"  alt="Muestra 1">
+                            </div>
+                        </div>
+                        <!-- BLOQUE CHECKBOX -->
+                        <div class="content-box-input">
+                            <div class="column-33">
+                                <input type="checkbox" id="moderno2" name="moderno" value="moderno2">
+                                <label for="moderno2">Moderno</label>
+                            </div>
+                            <div class="column-33">
+                                <input type="checkbox" id="clasico2" name="clasico" value="clasico2">
+                                <label for="clasico2">Clásico</label>
+                            </div>
+                            <div class="column-33">
+                                <input type="checkbox" id="modernoYclasico2" name="modernoYclasico" value="modernoYclasico2">
+                                <label for="modernoYclasico2">Ambas</label>
+                            </div>
+                        </div>
+                        <!-- BLOQUE DATOS A SQL -->
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">EMAIL</p>
+                            </div>
+                            <div class="column-75">
+                                <input type="email" name="email" class="text-box-90" placeholder="prueba@gmail.com">
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column-25">
+                                <p class="negrita">TELF</p>
+                            </div>
+                            <div class="column-75">
+                                <input type="tel" name="telf" class="text-box-90" placeholder="+34 666 222 333">
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type="submit" class="nextpage-button-menu button-menu" value="PRESUPUESTO" onclick="storageIndex(2)" name="submit2"/>
+                        </div>
+                    </form>
+                </div>
+                <div id="option3">
+                    <form>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">m<sup>2</sup></p>
+                            </div>
+                            <div class="column2-75">
+                                <input type="number" id="metros3" name="m2" class="text-box-60" placeholder="m&#178" required>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">WC</p>
+                            </div>
+                            <div class="column2-75">
+                                <select id="wc3" class="dropdown-selection">
+                                    <option value="suelo">A suelo</option>
+                                    <option value="suspendido">Suspendido</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">BIDÉ</p>
+                            </div>
+                            <div class="column2-75">
+                                <select id="bide3" class="dropdown-selection">
+                                    <option value="suelo">A suelo</option>
+                                    <option value="suspendido">Suspendido</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">MUEBLE</p>
+                            </div>
+                            <div class="column2-75">
+                                <select id="mueble3" class="dropdown-selection">
+                                    <option value="estandar">Estándar</option>
+                                    <option value="medida">A medida</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">GRIFERÍA</p>
+                            </div>
+                            <div class="column2-75">
+                                <select id="griferia3" class="dropdown-selection">
+                                    <option value="empotrada">Empotrada</option>
+                                    <option value="noEmpotrada">No empotrada</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="content-box-input">
+                            <div class="content-box-column3">
+                                <input type="checkbox" id="moderno3" name="moderno" required>
+                                <label for="moderno3">Moderno</label>
+                            </div>
+                            <div class="content-box-column3">
+                                <input type="checkbox" id="clasico3" name="clasico" required>
+                                <label for="clasico3">Clásico</label>
+                            </div>
+                            <div class="content-box-column3">
+                                <input type="checkbox" id="modernoYclasico3" name="modernoYclasico" required>
+                                <label for="modernoYclasico3">Ambas</label>
+                            </div>
+                        </div>
+
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">EMAIL</p>
+                            </div>
+                            <div class="column2-75">
+                                <input type="email" name="email" class="text-box-90" placeholder="prueba@gmail.com" required>
+                            </div>
+                        </div>
+                        <div class="content-box-input">
+                            <div class="column2-25">
+                                <p class="negrita">TELF</p>
+                            </div>
+                            <div class="column2-75">
+                                <input type="tel" name="telf" class="text-box-90" placeholder="+34 666 222 333">
+                            </div>
+                        </div>
+
+                        <div class="menu-form-continuar">
+                            <button class="nextpage-button-menu button-menu" onclick="storageIndex(3)"  type="button">PRESUPUESTO</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column-50">
+            <!--  Al inicio está en display:block, pero cuando le das al boton pasa a display:none -->
+            <table id="tablaCaract">
+                <tr>
+                    <th scope="col"></th>
+                    <th>Opción 1</th>
+                    <th>Opción 2</th>
+                    <th>Opción 3</th>
+                </tr>
+                <tr>
+                    <th>Acabados</th>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <th>Característica x</th>
+                    <td>❌️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <th>Característica x</th>
+                    <td>❌️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <th>Característica x</th>
+                    <td>❌️</td>
+                    <td>❌️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <th>Característica x</th>
+                    <td>❌️</td>
+                    <td>❌️</td>
+                    <td>✔️</td>
+                </tr>
+            </table>
+
+
+            <!--  Al inicio está en display:none, pero cuando le das al boton pasa a display:block -->
+            <!--  <embed class="pdf" id="pdf" src="img/pdf/prueba1.pdf" type="application/pdf"> -->
+            <form class="pdf" id="pdf" action="PDF/index.php" method="post" target="_blank">
+                <input type="submit" value="Ver pdf" name="submit"/>
+            </form>
+            <h1 id="titulo1" class="white margin-top-30 margin-bottom-30">FOTOS DE PROYECTOS PARECIDOS</h1>
+            <img id="foto1" class="in-line foto-muestra" src="img/fotoTipo/2.jpg"  alt="Muestra 1">
+            <img id="foto2" class="in-line foto-muestra" src="img/fotoTipo/2.jpg"  alt="Muestra 2">
+            <img id="foto3" class="in-line foto-muestra" src="img/fotoTipo/2.jpg"  alt="Muestra 3">
+            <img id="foto4" class="in-line foto-muestra" src="img/fotoTipo/2.jpg"  alt="Muestra 1">
+        </div>
+    </div>
+
+</main>
+<footer>
+    <div>
+        <div class="footer-column3">
+            <div class="footer-column3-text">
+                <h2>MENÚ PRINCIPAL</h2>
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-column3">
+            <div class="footer-column3-text">
+                <hr class="hr-movil">
+                <h2>CONTÁCTANOS</h2>
+                <ul>
+                    <li><a href="mailto:contacto@yummify.es?Subject=Hola%20YUMMER!" target="_top">contacto@yummify.es</a></li>
+                    <li><a href="tel:+34 600 062 676">+34 600 062 676</a></li>
+                    <li><a href="tel:+34 699 973 649">+34 699 973 649</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-column3">
+            <div class="footer-column3-text icon-medio">
+                <hr class="hr-movil">
+                <h2>SÍGUENOS EN</h2>
+                <a href="https://www.instagram.com/yummify/"><img src=""  alt="Instagram"></a>
+                <a href="https://www.facebook.com/Yummify-221987378629765/"><img src=""  alt="Facebook"></a>
+                <h2>Con la colaboración de:</h2>
+                <div class="icon-horizontal">
+                    <img src=""  alt="UPC Emprèn">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <hr class="hr-ambos">
+        <a href="politica-de-privacidad.html"> Política de privacidad </a>
+        <p>&copy; 2018 YUMMIFY</p>
+    </div>
+</footer>
+</body>
+</html>
